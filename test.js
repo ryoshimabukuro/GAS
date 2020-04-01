@@ -1,6 +1,6 @@
 function maketest() {
 
-  //テスト内容のスプレッドシートの値を全て取得する。
+  //テスト内容のスプレッドシートの値を全て取得する
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('テスト内容');
   var GetValue = sheet.getRange(1,1,sheet.getMaxRows(),sheet.getMaxColumns()).getValues();
   //Logger.log(SetValue);

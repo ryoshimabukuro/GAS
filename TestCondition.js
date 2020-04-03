@@ -74,7 +74,7 @@ function WriteTestCase() {
     
         GetValue2[1][i*2+5] = "備考"
         }
-            //罫線を引く
+    //罫線を引く
     var LineRange = sheet2.getRange(3, 5, DoTestCase.length ,TestDevice.length*2);
     LineRange.setBorder(true, true, true, true, true, true);
     }

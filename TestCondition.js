@@ -26,7 +26,7 @@ function WriteTestCase() {
             GetValue2[DoTestCase.length+2][2] = GetValue[3][i];
 
             for (var j = 0; j < TestingPerspectiveNo; j++) {
-                if (GetValue[j][i] == "〇") {
+                if (GetValue[j][i] == "◎") {
                     DoTestCase.push(GetValue[j][4]);
                 }
             }

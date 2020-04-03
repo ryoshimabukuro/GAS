@@ -1,4 +1,4 @@
-function WriteTestCase2() {
+function WriteTestCase3() {
 
     //テスト観点表のスプレッドシートの値を全て取得する
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('テスト観点表');
@@ -26,7 +26,7 @@ function WriteTestCase2() {
             GetValue2[DoTestCase.length+2][2] = GetValue[3][i];
 
             for (var j = 0; j < TestingPerspectiveNo; j++) {
-                if (GetValue[j][i] == "◎" || GetValue[j][i] == "〇" ) {
+                if (GetValue[j][i] == "◎" || GetValue[j][i] == "〇" || GetValue[j][i] == "△") {
                     DoTestCase.push(GetValue[j][4]);
                 }
             }

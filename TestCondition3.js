@@ -39,7 +39,7 @@ function WriteTestCase3() {
     }
 
     //テスト対象の情報を取得する
-    var sheet3 = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('テスト内容');
+    var sheet3 = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('テスト端末設定');
     var GetValue3 = sheet3.getRange(1,1,sheet3.getMaxRows(),sheet3.getMaxColumns()).getValues();
     
     var TestDevice = [];

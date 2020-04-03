@@ -48,21 +48,37 @@ function WriteTestCase() {
         TestDevice.push(GetValue3[i][4]);
     }
 
-    //TestDeviceの後ろに備考を入れる
-    for(i = 0;i < TestDevice.length;i++){
-    GetValue2[1][i*2+4] = TestDevice[i]
+    //TestDeviceの後ろに備考とチケット作成欄を入れる
+    if (GetValue3[2][5]) {
+        for(i = 0;i < TestDevice.length;i++){
+            GetValue2[1][i*3+4] = TestDevice[i]
+        
+            var ColorRange = sheet2.getRange(3,i*3+6,DoTestCase.length,2)
+            ColorRange.setBackground("#f6d2d2");
+        
+            GetValue2[1][i*3+5] = "備考"
+            GetValue2[1][i*3+6] = "チケット"
+        }
+            
+    //罫線を引く
+        var LineRange = sheet2.getRange(3, 5, DoTestCase.length ,TestDevice.length*3);
+        LineRange.setBorder(true, true, true, true, true, true);
     
-    var ColorRange = sheet2.getRange(3,i*2+6,DoTestCase.length,1)
-    ColorRange.setBackground("#f6d2d2");
+    }else{       
     
-    GetValue2[1][i*2+5] = "備考"
+        for(i = 0;i < TestDevice.length;i++){
+        GetValue2[1][i*2+4] = TestDevice[i]
+    
+        var ColorRange = sheet2.getRange(3,i*2+6,DoTestCase.length,1)
+        ColorRange.setBackground("#f6d2d2");
+    
+        GetValue2[1][i*2+5] = "備考"
+        }
+            //罫線を引く
+    var LineRange = sheet2.getRange(3, 5, DoTestCase.length ,TestDevice.length*2);
+    LineRange.setBorder(true, true, true, true, true, true);
     }
 
     //テストケースのシートに書き込む。
     sheet2.getRange(1,1,sheet2.getMaxRows(),sheet2.getMaxColumns()).setValues(GetValue2);
-
-    //罫線を引く
-    var LineRange = sheet2.getRange(3, 5, DoTestCase.length ,TestDevice.length*2);
-    LineRange.setBorder(true, true, true, true, true, true);
-
 }

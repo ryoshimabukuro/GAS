@@ -58,7 +58,7 @@ function WriteTestCase() {
     GetValue2[1][i*2+5] = "備考"
     }
 
-    //テストケースのシートに書き込む
+    //テストケースのシートに書き込む。
     sheet2.getRange(1,1,sheet2.getMaxRows(),sheet2.getMaxColumns()).setValues(GetValue2);
 
     //罫線を引く

@@ -1,4 +1,4 @@
-function WriteTestCase3() {
+function WriteTestCase1() {
 
     //それぞれのスプレッドシートの値を全て取得する
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('テスト観点表');

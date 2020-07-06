@@ -9,18 +9,22 @@ function get_issue_data(){
   var description = fields["description"];
   var summary = fields["summary"];
   var custom1 = fields["customfield_10025"];
-  Logger.log([type, status, description, summary]);
+  var text = type + status + description + summary + custom1
+  
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Jira連携');
+  sheet.getRange(1,1).setValue(text);
+  console.log(jobj);
 }
 
 function get_issue() {
-  var token = get_token();
-  var key = "XY2020-1";
+  var token = get_token(); //get_token()からtokenを取得
+  var key = "XY2020-2"; //Keyを指定（プロジェクトの一覧画面で確認できる。）
   var options = {
-    contentType: "application/json",
-    headers: {"Authorization": " Basic " + token}
+    contentType: "application/json", //json形式でデータを取得
+    headers: {"Authorization": " Basic " + token} //ヘッダーでtoken情報をBasicで送信
   };
-  var url = ISSUE_URL + key;
-  var response = UrlFetchApp.fetch(url, options);
+  var url = ISSUE_URL + key; //urlにISSUE_URLとKeyをくっつけて入れて
+  var response = UrlFetchApp.fetch(url, options); //optionの内容でデータを取得するよう設定
   return response;
 }
 

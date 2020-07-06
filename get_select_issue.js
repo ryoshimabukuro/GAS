@@ -1,4 +1,4 @@
-var ISSUE_URL = 'https://neo-universe.atlassian.net/rest/api/2/issue/';
+var ISSUE_URL = 'https://nextinnovation-inc.atlassian.net/rest/api/2/issue/';
 
 function get_issue_data(){
   var response = get_issue();
@@ -18,7 +18,7 @@ function get_issue_data(){
 
 function get_issue() {
   var token = get_token(); //get_token()からtokenを取得
-  var key = "XY2020-2"; //Keyを指定（プロジェクトの一覧画面で確認できる。）
+  var key = "SV1D-1"; //Keyを指定（プロジェクトの一覧画面で確認できる。）
   var options = {
     contentType: "application/json", //json形式でデータを取得
     headers: {"Authorization": " Basic " + token} //ヘッダーでtoken情報をBasicで送信
